@@ -1,3 +1,6 @@
 fastapi
-uvicorn[standard]
+httpx
+requests
 python-dotenv
+langgraph==0.3.34
+google-genai==1.26.0
