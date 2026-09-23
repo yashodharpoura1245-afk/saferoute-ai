@@ -161,7 +161,7 @@ export default function Home() {
   }, [theme]);
 
   useEffect(() => {
-    fetch("/api/weather?latitude=12.9716&longitude=77.5946")
+    fetch("https://backend-eight-flax-59.vercel.app/api/weather?latitude=12.9716&longitude=77.5946")
       .then((response) => response.json())
       .then(setWeather)
       .catch(() => setWeather(null));
@@ -193,7 +193,7 @@ export default function Home() {
     setAgentExplanation("");
     setAgentSelectedRouteId(null);
     try {
-      const response = await fetch("/api/agent/recommend", {
+      const response = await fetch("https://backend-eight-flax-59.vercel.app/api/agent/recommend", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ origin, destination, stops: stops.filter((stop) => stop.trim()) }),
